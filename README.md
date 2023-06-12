@@ -34,6 +34,7 @@ To accurately measure the delay, I focus specifically on the clock-to-Q delay of
 Moreover, I carefully size the transistors in the design to ensure that the rising and falling delays, particularly when the output load is 100fF, exhibit a difference of no more than 10%. This ensures a balanced and symmetric performance of the FF across different load conditions.
 
 ![image](https://github.com/shirishavissom/Design-Characterization-of-a-D-Flip-flop/assets/112213946/0b45c1c8-b5a3-41c8-85d7-ad056c4613f0)
+![image](https://github.com/shirishavissom/Design-Characterization-of-a-D-Flip-flop/assets/112213946/45eb2adf-5f73-42ac-a033-f2a5af13cc91)
 
 ![image](https://github.com/shirishavissom/Design-Characterization-of-a-D-Flip-flop/assets/112213946/b26c2804-9e8b-4801-a1cc-6616dbb3a1a8)
 
@@ -41,9 +42,17 @@ SINK CAP:
 To calculate the input sink capacitance, it is necessary to obtain the current waveform that depicts the current flowing into the input D. Since the sinusoidal voltage source, vsin, is connected to the input D in the schematic, we examine the current originating from vsin. By running the simulation, you will observe a waveform that represents the current into the input D as a function of frequency.
 
 The next step involves calculating the input sink capacitance. To do so, select 10 data points from the waveform and record the corresponding frequency and current for each point. Then, for each data point, calculate the capacitance using the formula C = I / (2 * pi * f), where I represents the current and f represents the frequency. Finally, compute the mean value of the capacitance obtained from the 10 data points.
-![image](https://github.com/shirishavissom/Design-Characterization-of-a-D-Flip-flop/assets/112213946/45eb2adf-5f73-42ac-a033-f2a5af13cc91)
+
 ![image](https://github.com/shirishavissom/Design-Characterization-of-a-D-Flip-flop/assets/112213946/137df04d-f554-4ecd-9357-b16566d46657)
 
+SETUP TIME: 
+The setup time of a Flip-Flop refers to the duration required for the input data signal to stabilize before the arrival of the clock edge. To measure the setup time of your device, you need to assess the clock-to-Q delay of the flip-flop by varying the time gap between the D input and the rising edge of the clock signal.
+
+To begin, set the D input to arrive significantly earlier than the rising edge of the clock and measure the corresponding delay. Then, gradually bring the D input closer to the 'CLK' input and measure the delay at each step. Repeat this process until the Flip-Flop reaches a meta-stable state, which indicates that the FF is unable to provide a reliable output and may produce erroneous results. This meta-stable state serves as an indicator of the setup time for your device.
+
+![image](https://github.com/shirishavissom/Design-Characterization-of-a-D-Flip-flop/assets/112213946/c9397c4b-c1c5-4da7-956a-f4f53105337a)
+
+![image](https://github.com/shirishavissom/Design-Characterization-of-a-D-Flip-flop/assets/112213946/25be62a4-e4c3-4d9f-bdad-6341c5601476)
 
 
 
